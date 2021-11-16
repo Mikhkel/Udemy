@@ -51,12 +51,33 @@ function detectPersonalLevel() {
 
 detectPersonalLevel();
 
-function showMyDB() {
-    if(!personalMovieDB.privat) {
+// function showMyDB() {
+//     if(!personalMovieDB.privat) {
+//         console.log(personalMovieDB);
+//     }
+// }
+
+// showMyDB();
+
+
+function showMyDB(hidden) {
+    if(!hidden) {
         console.log(personalMovieDB);
     }
 }
 
+showMyDB(personalMovieDB.privat);
+
+
+
+
+function writeYourGenres() {
+    for(let i = 0; i < 3; i++){
+        personalMovieDB.genres[i] = prompt(`Ваш любимый жанр под номером ${(i+1)}`, '');
+    }
+}
+
+writeYourGenres();
 
 
 
@@ -95,5 +116,3 @@ function showMyDB() {
 
 //  personalMovieDB.movies[a] = b;
 //  personalMovieDB.movies[c] = d;
-
- console.log(personalMovieDB);
