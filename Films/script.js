@@ -39,9 +39,29 @@ const personalMovieDB = {
         } 
     },
     writeYourGenres: function() {
-        for(let i = 0; i < 3; i++){
-            personalMovieDB.genres[i] = prompt(`Ваш любимый жанр под номером ${(i+1)}`, '');
+        for(let i = 1; i < 2; i++){
+            // let genre = prompt(`Ваш любимый жанр под номером ${(i+1)}`, '');
+
+            // if(genre == null || genre == ''){
+            //     console.log("Введите корректные данные");
+            //     i--;
+            // }else{
+            //     personalMovieDB.genres[i] = genre;
+            // }
+
+            let genre = prompt(`Введите жанры через запятую`, '').toLowerCase();
+
+            if(genre == null || genre == ''){
+                console.log("Введите корректные данные");
+                i--;
+            }else{
+                personalMovieDB.genres = genre.split(', ');
+                personalMovieDB.genres.sort();
+            }
         }
+        personalMovieDB.genres.forEach((item, i) => {
+            console.log(`Любимый жанр ${i+1} - это ${item}`);
+        })
     },
     togleShowMyBB: function() {
         personalMovieDB.privat = !personalMovieDB.privat;
