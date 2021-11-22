@@ -45,6 +45,11 @@ const personalMovieDB = {
     },
     togleShowMyBB: function() {
         personalMovieDB.privat = !personalMovieDB.privat;
+    },
+    showMyDB: function(hidden) {
+        if(!hidden) {
+            console.log(personalMovieDB);
+        }
     }
 };
 
@@ -57,19 +62,6 @@ const personalMovieDB = {
 // }
 
 // showMyDB();
-
-
-function showMyDB(hidden) {
-    if(!hidden) {
-        console.log(personalMovieDB);
-    }
-}
-
-showMyDB(personalMovieDB.privat);
-
-
-
-
 
 
 // let num = 1;
